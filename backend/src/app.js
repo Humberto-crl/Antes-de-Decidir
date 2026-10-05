@@ -5,6 +5,7 @@ const app = express();
 
 app.use(cors()); //Esto permitira las peticiones desde Angular
 app.use(express.json()); //Permitira leer los datos JSON cuando lleguen
+app.use('/api/categorias', require('./routes/categorias.routes'));
 
 //Esta ruta nos dara a saber si el sevidor funciona
 app.get('api/health', (req, res) => {
