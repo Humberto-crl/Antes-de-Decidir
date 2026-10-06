@@ -1,58 +1,228 @@
-<section class="hero">
+<main class="home">
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <span class="eyebrow">Piensa antes de dar el siguiente paso</span>
+        <h1>Decidir mejor empieza por <span>comprender.</span></h1>
+        <p>Antes de Decidir te ayuda a ordenar una situación, analizar tus opciones y visualizar posibles escenarios sin decidir por ti.</p>
+        <div class="hero-actions">
+          <a class="primary-button" routerLink="/registro">Comenzar ahora</a>
+          <a class="secondary-button" routerLink="/situaciones">Explorar situaciones</a>
+        </div>
+      </div>
 
-  <h1>Antes de Decidir</h1>
+      <div class="hero-panel">
+        <div class="panel-header">
+          <span class="panel-dot"></span>
+          <span>Tu proceso</span>
+        </div>
+        <div class="process-item active">
+          <span class="process-number">01</span>
+          <div>
+            <strong>Situación</strong>
+            <p>¿Qué está pasando?</p>
+          </div>
+        </div>
+        <div class="process-line"></div>
+        <div class="process-item">
+          <span class="process-number">02</span>
+          <div>
+            <strong>Análisis</strong>
+            <p>¿Qué factores importan?</p>
+          </div>
+        </div>
+        <div class="process-line"></div>
+        <div class="process-item">
+          <span class="process-number">03</span>
+          <div>
+            <strong>Escenarios</strong>
+            <p>¿Qué podría suceder?</p>
+          </div>
+        </div>
+        <div class="process-line"></div>
+        <div class="process-item">
+          <span class="process-number">04</span>
+          <div>
+            <strong>Preparación</strong>
+            <p>¿Qué necesitas saber?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p>
-    Comprende mejor una situación antes de actuar, la plataforma te podra ayudara organizar mejor la información, comparar alternativas y visualizar posibles escenarios antes de tomar una decisión definitiva.
-  </p>
+  <section class="problem section">
+    <div class="container problem-grid">
+      <div>
+        <span class="section-label">01 · El problema</span>
+        <h2>La dificultad no siempre es encontrar información.</h2>
+      </div>
+      <div>
+        <p class="lead">A veces el verdadero problema es saber qué hacer con ella.</p>
+        <p>Una decisión importante puede mezclar dudas, información incompleta, alternativas y consecuencias difíciles de imaginar. La plataforma convierte todo eso en un proceso más claro y ordenado.</p>
+      </div>
+    </div>
+  </section>
 
-  <button>
-    Comenzar
-  </button>
+  <section class="how section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">02 · El proceso</span>
+          <h2>De una situación confusa a una visión más clara.</h2>
+        </div>
+        <p>La plataforma organiza tu situación paso a paso para que puedas pensar con mayor contexto.</p>
+      </div>
 
-</section>
+      <div class="steps">
+        <article class="step-card">
+          <span>01</span>
+          <h3>Situación</h3>
+          <p>Describe qué está ocurriendo y qué quieres comprender.</p>
+        </article>
+        <article class="step-card">
+          <span>02</span>
+          <h3>Análisis</h3>
+          <p>Identifica los factores que pueden influir en tu situación.</p>
+        </article>
+        <article class="step-card">
+          <span>03</span>
+          <h3>Información faltante</h3>
+          <p>Descubre qué datos o preguntas necesitas resolver.</p>
+        </article>
+        <article class="step-card">
+          <span>04</span>
+          <h3>Alternativas</h3>
+          <p>Organiza las opciones disponibles y compáralas.</p>
+        </article>
+        <article class="step-card">
+          <span>05</span>
+          <h3>Escenarios</h3>
+          <p>Explora posibles resultados sin asumir que uno ocurrirá.</p>
+        </article>
+        <article class="step-card">
+          <span>06</span>
+          <h3>Preparación</h3>
+          <p>Convierte lo aprendido en preguntas, tareas y próximos pasos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section class="descripcion">
+  <section class="situations section">
+    <div class="container">
+      <div class="section-heading centered">
+        <span class="section-label">03 · Situaciones</span>
+        <h2>Decisiones de la vida real.</h2>
+        <p>Elige el contexto que más se parece a lo que estás viviendo.</p>
+      </div>
 
-  <h2>¿Qué es Antes de Decidir?</h2>
+      <div class="category-grid">
+        <a class="category-card" routerLink="/situaciones">
+          <span class="category-icon">01</span>
+          <h3>Trabajo</h3>
+          <p>Ofertas, cambios laborales y oportunidades.</p>
+          <span class="category-arrow">→</span>
+        </a>
+        <a class="category-card" routerLink="/situaciones">
+          <span class="category-icon">02</span>
+          <h3>Educación y carrera</h3>
+          <p>Estudios, especializaciones y caminos profesionales.</p>
+          <span class="category-arrow">→</span>
+        </a>
+        <a class="category-card" routerLink="/situaciones">
+          <span class="category-icon">03</span>
+          <h3>Finanzas</h3>
+          <p>Gastos, ingresos, compras y compromisos económicos.</p>
+          <span class="category-arrow">→</span>
+        </a>
+        <a class="category-card" routerLink="/situaciones">
+          <span class="category-icon">04</span>
+          <h3>Independencia</h3>
+          <p>Vivienda, responsabilidades y nuevos proyectos personales.</p>
+          <span class="category-arrow">→</span>
+        </a>
+        <a class="category-card" routerLink="/situaciones">
+          <span class="category-icon">05</span>
+          <h3>Vida cotidiana</h3>
+          <p>Situaciones personales que requieren organizar opciones.</p>
+          <span class="category-arrow">→</span>
+        </a>
+        <a class="category-card" routerLink="/situaciones">
+          <span class="category-icon">06</span>
+          <h3>Seguridad digital</h3>
+          <p>Privacidad, cuentas, riesgos y decisiones en línea.</p>
+          <span class="category-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <p>
-    Es una plataforma enfocada en situaciones reales tales<br>
-  como en estudios, finanzas, trabajos e independizarse.
-  </p>
+  <section class="tools section">
+    <div class="container tools-grid">
+      <div class="tools-copy">
+        <span class="section-label">04 · Herramientas</span>
+        <h2>No necesitas una respuesta rápida. Necesitas mejores preguntas.</h2>
+        <p>Antes de Decidir combina diferentes herramientas para que puedas mirar una situación desde más de un ángulo.</p>
+        <a class="primary-button" routerLink="/situaciones">Ver herramientas</a>
+      </div>
 
-</section>
+      <div class="tools-list">
+        <div class="tool-item">
+          <strong>Analizador</strong>
+          <span>Ordena los factores de una situación.</span>
+        </div>
+        <div class="tool-item">
+          <strong>Comparador</strong>
+          <span>Contrasta alternativas con criterios claros.</span>
+        </div>
+        <div class="tool-item">
+          <strong>Calculadoras</strong>
+          <span>Convierte datos en información útil.</span>
+        </div>
+        <div class="tool-item">
+          <strong>Escenarios</strong>
+          <span>Visualiza diferentes posibilidades.</span>
+        </div>
+        <div class="tool-item">
+          <strong>Checklist</strong>
+          <span>Comprueba qué te falta antes de avanzar.</span>
+        </div>
+        <div class="tool-item">
+          <strong>IA de apoyo</strong>
+          <span>Obtén preguntas y perspectivas adicionales.</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="categorias">
+  <section class="philosophy section">
+    <div class="container philosophy-box">
+      <span class="section-label">05 · Nuestra filosofía</span>
+      <h2>La decisión sigue siendo tuya.</h2>
+      <div class="philosophy-grid">
+        <div>
+          <strong>NO DECIDE</strong>
+          <p>No elige por ti ni pretende conocer cuál es la respuesta correcta.</p>
+        </div>
+        <div>
+          <strong>SÍ ANALIZA</strong>
+          <p>Te ayuda a identificar factores, alternativas y posibles consecuencias.</p>
+        </div>
+        <div>
+          <strong>SÍ PREPARA</strong>
+          <p>Te muestra qué información y preguntas pueden ayudarte a avanzar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Categorias</h2>
-
-  <ul>
-    <li>Trabajo</li>
-    <li>Estudios</li>
-    <li>Finanzas</li>
-    <li>Independencia</li>
-    <li>Seguridad Digital</li>
-    <li>Vida Cotidiana</li>
-  </ul>
-
-</section>
-
-<section class="funcionamiento">
-
-  <h2>¿Cómo Funciona?</h2>
-
-  <nav>
-
-    <ol>
-      <li><a href="#">Situaciones</a></li>
-      <li><a href="#">Análisis</a></li>
-      <li><a href="#">Información faltante</a></li>
-      <li><a href="#">Alternativas</a></li>
-      <li><a href="#">Escenarios</a></li>
-      <li><a href="#">Preparación</a></li>
-    </ol>
-
-  </nav>
-
-</section>
+  <section class="final-cta section">
+    <div class="container final-cta-content">
+      <span class="section-label">06 · Tu siguiente paso</span>
+      <h2>Antes de decidir, comprende.</h2>
+      <p>Empieza a organizar una situación y descubre qué necesitas saber antes de tomar una decisión.</p>
+      <a class="primary-button" routerLink="/registro">Empezar ahora</a>
+    </div>
+  </section>
+</main>
