@@ -1,1 +1,51 @@
-<p>perfil works!</p>
+<main class="perfil-page">
+  <section class="page-hero">
+    <div class="container profile-hero">
+      <div class="avatar">HP</div>
+      <div>
+        <span class="section-label">Tu cuenta</span>
+        <h1>Mi perfil</h1>
+        <p>Administra tu información personal y revisa cómo estás utilizando Antes de Decidir.</p>
+      </div>
+      <a class="secondary-button" routerLink="/mi-camino">Ver Mi Camino</a>
+    </div>
+  </section>
+
+  <section class="section profile-content">
+    <div class="container profile-grid">
+      <div class="profile-main">
+        <div class="profile-card">
+          <div class="card-heading"><div><span class="card-kicker">Información personal</span><h2>Datos de la cuenta</h2></div><span class="status">Activa</span></div>
+          <div class="field-grid">
+            <div class="field"><span>Nombre</span><strong>Usuario</strong></div>
+            <div class="field"><span>Correo electrónico</span><strong>usuario@ejemplo.com</strong></div>
+            <div class="field"><span>Nombre de usuario</span><strong>usuario</strong></div>
+            <div class="field"><span>Cuenta creada</span><strong>2026</strong></div>
+          </div>
+          <button class="secondary-button" type="button">Editar información</button>
+        </div>
+
+        <div class="profile-card">
+          <span class="card-kicker">Preferencias</span>
+          <h2>Tu experiencia</h2>
+          <div class="preference-row"><div><strong>Recordatorios de preparación</strong><span>Recibir avisos sobre análisis pendientes.</span></div><span class="toggle on"></span></div>
+          <div class="preference-row"><div><strong>Resumen de actividad</strong><span>Conservar una visión general de tu recorrido.</span></div><span class="toggle"></span></div>
+        </div>
+      </div>
+
+      <aside class="profile-side">
+        <div class="stats-card">
+          <span class="card-kicker">Actividad</span>
+          <div class="stat"><strong>0</strong><span>Análisis iniciados</span></div>
+          <div class="stat"><strong>0</strong><span>Comparaciones</span></div>
+          <div class="stat"><strong>0</strong><span>Checklists completados</span></div>
+        </div>
+        <div class="privacy-card">
+          <span class="card-kicker">Privacidad</span>
+          <h3>Tus decisiones son tuyas.</h3>
+          <p>El perfil existe para organizar tu experiencia. La plataforma no determina qué decisión debes tomar.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
