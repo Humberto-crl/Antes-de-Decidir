@@ -14,7 +14,7 @@ async function obtenerPorId(id) {
 }
 
 async function crear(nombre, descripcion) {
-    const [rows] = await pool.query(
+    const [result] = await pool.query(
         'INSERT INTO categorias (nombre, descripcion) VALUES (?, ?)',
         [nombre, descripcion]
     );

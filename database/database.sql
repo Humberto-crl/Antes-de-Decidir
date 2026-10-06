@@ -62,6 +62,16 @@ CREATE TABLE analisis(
     REFERENCES situaciones(id_situacion)
 );
 
+CREATE TABLE alternativas(
+    id_alternativa INT AUTO_INCREMENT PRIMARY KEY,
+    id_situacion INT,
+    nombre VARCHAR(100),
+    descripcion TEXT,
+
+    FOREIGN KEY(id_situacion)
+    REFERENCES situaciones(id_situacion)
+);
+
 CREATE TABLE alternativa_factor(
     id_alternativa_factor INT AUTO_INCREMENT PRIMARY KEY,
     id_alternativa INT NOT NULL,
