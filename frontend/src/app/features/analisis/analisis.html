@@ -1,1 +1,98 @@
-<p>analisis works!</p>
+<main class="analisis-page">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Herramienta 01 · Analizador</span>
+      <h1>Entiende qué está pasando antes de decidir.</h1>
+      <p>Descompón una situación en sus elementos principales, identifica lo que sabes y descubre qué información todavía necesitas.</p>
+    </div>
+  </section>
+
+  <section class="section analysis-content">
+    <div class="container">
+      <div class="analysis-layout">
+        <div class="analysis-main">
+          <div class="step-header">
+            <div>
+              <span class="section-label">Paso 01</span>
+              <h2>Describe la situación</h2>
+            </div>
+            <span class="step-count">1 / 4</span>
+          </div>
+
+          <div class="analysis-card">
+            <label for="situacion">¿Qué está ocurriendo?</label>
+            <p class="field-help">Escribe la situación con tus propias palabras. No necesitas tener la respuesta.</p>
+            <textarea id="situacion" rows="7" placeholder="Por ejemplo: recibí una oferta de trabajo, pero no sé si las condiciones compensan dejar mi empleo actual..."></textarea>
+            <div class="field-footer">
+              <span>Describe hechos, dudas y lo que te preocupa.</span>
+              <span>0 / 1000</span>
+            </div>
+          </div>
+
+          <div class="factors-card">
+            <div class="card-heading">
+              <div>
+                <span class="card-kicker">Paso 02</span>
+                <h3>¿Qué factores pueden influir?</h3>
+              </div>
+              <span class="optional">Opcional</span>
+            </div>
+
+            <div class="factor-grid">
+              <label class="factor-option">
+                <input type="checkbox">
+                <span><strong>Dinero</strong>Costos, ingresos o compromisos.</span>
+              </label>
+              <label class="factor-option">
+                <input type="checkbox">
+                <span><strong>Tiempo</strong>Plazos, horarios o disponibilidad.</span>
+              </label>
+              <label class="factor-option">
+                <input type="checkbox">
+                <span><strong>Personas</strong>Familia, equipo o relaciones.</span>
+              </label>
+              <label class="factor-option">
+                <input type="checkbox">
+                <span><strong>Riesgo</strong>Posibles problemas o consecuencias.</span>
+              </label>
+              <label class="factor-option">
+                <input type="checkbox">
+                <span><strong>Objetivos</strong>Lo que quieres conseguir.</span>
+              </label>
+              <label class="factor-option">
+                <input type="checkbox">
+                <span><strong>Información</strong>Datos que todavía necesitas.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="analysis-actions">
+            <a class="secondary-button" routerLink="/situaciones">Volver</a>
+            <a class="primary-button" routerLink="/comparador">Continuar análisis</a>
+          </div>
+        </div>
+
+        <aside class="analysis-sidebar">
+          <div class="side-card process-card">
+            <span class="card-kicker">Tu proceso</span>
+            <h3>Primero comprende. Después compara.</h3>
+            <div class="process-list">
+              <div class="process-row active"><span>01</span><div><strong>Situación</strong><small>Qué está pasando</small></div></div>
+              <div class="process-row"><span>02</span><div><strong>Factores</strong><small>Qué puede influir</small></div></div>
+              <div class="process-row"><span>03</span><div><strong>Información</strong><small>Qué falta conocer</small></div></div>
+              <div class="process-row"><span>04</span><div><strong>Preparación</strong><small>Qué hacer después</small></div></div>
+            </div>
+          </div>
+
+          <div class="side-card principle-card">
+            <span class="principle-mark">i</span>
+            <div>
+              <strong>Recuerda</strong>
+              <p>El analizador no determina qué debes hacer. Su función es ayudarte a ver mejor la situación.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
