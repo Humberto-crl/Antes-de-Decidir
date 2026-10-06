@@ -1,0 +1,361 @@
+.comparador-page {
+  min-height: 100%;
+}
+
+.page-hero {
+  padding: 5.2rem 0 4.3rem;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(229, 139, 50, 0.12), transparent 28%),
+    var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+  max-width: 850px;
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.045em;
+}
+
+.page-hero p {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: var(--text-light);
+  font-size: 1.08rem;
+}
+
+.comparador-content {
+  background: var(--background);
+}
+
+.comparison-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-header h2 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.035em;
+}
+
+.comparison-table {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.table-head,
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+}
+
+.table-head {
+  border-bottom: 1px solid var(--border);
+  background: var(--primary);
+  color: #fff;
+}
+
+.criterion-heading,
+.option-heading {
+  min-height: 110px;
+  padding: 1.3rem;
+}
+
+.criterion-heading {
+  display: flex;
+  align-items: flex-end;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.option-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.option-number {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.55rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.option-heading strong {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+}
+
+.option-heading span:last-child {
+  margin-top: 0.15rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.72rem;
+}
+
+.comparison-row {
+  min-height: 112px;
+  border-bottom: 1px solid var(--border);
+}
+
+.comparison-row.last {
+  border-bottom: 0;
+}
+
+.criterion {
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fbfcfd;
+}
+
+.criterion strong {
+  color: var(--primary);
+  font-size: 0.88rem;
+}
+
+.criterion span {
+  margin-top: 0.25rem;
+  color: var(--text-light);
+  font-size: 0.7rem;
+}
+
+.score-cell {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--border);
+}
+
+.score {
+  color: var(--primary);
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.score-cell > span {
+  margin-top: 0.25rem;
+  color: #8997a3;
+  font-size: 0.68rem;
+}
+
+.rating {
+  display: flex;
+  gap: 0.28rem;
+}
+
+.rating span {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #c7d1d9;
+  border-radius: 50%;
+}
+
+.risk,
+.fit {
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.risk.low {
+  background: #e9f4ef;
+  color: var(--success);
+}
+
+.risk.medium {
+  background: #fff2dc;
+  color: #9c6817;
+}
+
+.fit {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.comparison-note {
+  margin-top: 1rem;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  gap: 0.8rem;
+  border: 1px solid #d5e1e9;
+  border-radius: var(--radius-md);
+  background: var(--primary-light);
+}
+
+.note-icon {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.comparison-note strong {
+  color: var(--primary);
+  font-size: 0.84rem;
+}
+
+.comparison-note p {
+  margin: 0.25rem 0 0;
+  color: var(--text-light);
+  font-size: 0.76rem;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.criteria-card,
+.scenario-card {
+  padding: 1.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.criteria-card h2,
+.scenario-card h2 {
+  margin-bottom: 0.65rem;
+  font-size: 1.35rem;
+}
+
+.criteria-card p,
+.scenario-card p {
+  color: var(--text-light);
+  font-size: 0.84rem;
+}
+
+.criteria-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.criteria-list span {
+  padding: 0.65rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--primary);
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.scenario-card {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.scenario-card h2 {
+  color: #fff;
+}
+
+.scenario-card p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.scenario-card .primary-button {
+  margin-top: 0.5rem;
+}
+
+.comparison-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+
+@media (max-width: 800px) {
+  .table-head,
+  .comparison-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .criterion-heading,
+  .criterion {
+    display: none;
+  }
+
+  .option-heading,
+  .score-cell {
+    border-left: 0;
+  }
+
+  .option-heading + .option-heading,
+  .score-cell + .score-cell {
+    border-left: 1px solid var(--border);
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-hero {
+    padding: 4rem 0 3.5rem;
+  }
+
+  .comparison-header,
+  .comparison-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .comparison-header .secondary-button,
+  .comparison-actions a {
+    width: 100%;
+  }
+
+  .criterion-heading,
+  .option-heading {
+    min-height: 95px;
+    padding: 0.9rem;
+  }
+
+  .option-heading strong {
+    font-size: 0.82rem;
+  }
+
+  .comparison-row {
+    min-height: 105px;
+  }
+
+  .score-cell {
+    padding: 0.6rem;
+  }
+
+  .criteria-list {
+    grid-template-columns: 1fr;
+  }
+}
