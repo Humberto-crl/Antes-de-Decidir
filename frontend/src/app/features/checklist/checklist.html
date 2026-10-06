@@ -1,1 +1,112 @@
-<p>checklist works!</p>
+<main class="checklist-page">
+  <section class="page-hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="section-label">Herramienta 03 · Checklist</span>
+        <h1>Descubre qué te falta antes de avanzar.</h1>
+        <p>Una lista no toma la decisión por ti. Te ayuda a comprobar si tienes la información necesaria para tomarla con mayor contexto.</p>
+      </div>
+      <div class="completion-card">
+        <span>Preparación actual</span>
+        <strong>0%</strong>
+        <div class="completion-bar"><span></span></div>
+        <small>0 de 8 elementos revisados</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section checklist-content">
+    <div class="container">
+      <div class="checklist-layout">
+        <div class="checklist-main">
+          <div class="section-heading">
+            <div>
+              <span class="section-label">Antes de decidir</span>
+              <h2>Preguntas que conviene revisar.</h2>
+            </div>
+            <span class="check-count">0 / 8</span>
+          </div>
+
+          <div class="checklist-card">
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="box"></span>
+              <span class="check-copy"><strong>Entiendo cuál es la situación.</strong><small>Puedo explicar qué está ocurriendo y qué necesito resolver.</small></span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="box"></span>
+              <span class="check-copy"><strong>Conozco mis alternativas.</strong><small>He identificado las opciones que realmente están disponibles.</small></span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="box"></span>
+              <span class="check-copy"><strong>Tengo claros los costos.</strong><small>Conozco los gastos, compromisos o recursos que implica cada opción.</small></span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="box"></span>
+              <span class="check-copy"><strong>He considerado el tiempo.</strong><small>Sé qué plazos, horarios o cambios de rutina podría requerir.</small></span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="box"></span>
+              <span class="check-copy"><strong>Reconozco los principales riesgos.</strong><small>He pensado qué podría salir mal y qué consecuencias tendría.</small></span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="box"></span>
+              <span class="check-copy"><strong>He buscado información importante.</strong><small>Los datos que podrían cambiar mi análisis están razonablemente claros.</small></span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="box"></span>
+              <span class="check-copy"><strong>Mis objetivos están definidos.</strong><small>Sé qué quiero priorizar y qué estoy dispuesto a aceptar.</small></span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="box"></span>
+              <span class="check-copy"><strong>Sé qué necesito preguntar.</strong><small>Tengo identificadas las dudas que todavía debo resolver.</small></span>
+            </label>
+          </div>
+
+          <div class="checklist-actions">
+            <a class="secondary-button" routerLink="/comparador">Volver al comparador</a>
+            <a class="primary-button" routerLink="/escenarios">Explorar escenarios</a>
+          </div>
+        </div>
+
+        <aside class="checklist-sidebar">
+          <div class="side-card tip-card">
+            <span class="tip-icon">?</span>
+            <div>
+              <span class="card-kicker">Una buena pregunta</span>
+              <h3>¿Qué dato podría cambiar mi decisión?</h3>
+              <p>Si existe una información que todavía desconoces y podría cambiar tu perspectiva, vale la pena buscarla antes de avanzar.</p>
+            </div>
+          </div>
+
+          <div class="side-card categories-card">
+            <span class="card-kicker">Áreas de revisión</span>
+            <div class="category-row"><span>01</span><strong>Situación</strong></div>
+            <div class="category-row"><span>02</span><strong>Opciones</strong></div>
+            <div class="category-row"><span>03</span><strong>Recursos</strong></div>
+            <div class="category-row"><span>04</span><strong>Riesgos</strong></div>
+            <div class="category-row"><span>05</span><strong>Objetivos</strong></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section checklist-footer">
+    <div class="container checklist-footer-box">
+      <div>
+        <span class="section-label">Cuando termines</span>
+        <h2>La claridad no exige tener todas las respuestas.</h2>
+        <p>Si todavía quedan preguntas, eso también es información. Puedes convertirlas en próximos pasos.</p>
+      </div>
+      <a class="primary-button" routerLink="/mi-camino">Ver Mi Camino</a>
+    </div>
+  </section>
+</main>
