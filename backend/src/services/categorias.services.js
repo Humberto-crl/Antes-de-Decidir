@@ -7,7 +7,7 @@ async function obtenerTodas() {
 
 async function obtenerPorId(id) {
     const [rows] = await pool.query(
-        'SELECT * FROM categorias WHERE id_categoria ? ?',
+        'SELECT * FROM categorias WHERE id_categoria = ?',
         [id]
     );
     return rows[0];
