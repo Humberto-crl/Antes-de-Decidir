@@ -1,13 +1,19 @@
-<div>
-    <h1 class="logo">
-        {{ titulo }}
-    </h1>
-    
-    <nav>
-        <a routerLink="/inicio">Inicio</a>
-        <a routerLink="/login">Login</a>
-        <a routerLink="/registro">Registro</a>
-        <a routerLink="/situaciones">Situaciones</a>
-        <a routerLink="/mi-camino">Mi Camino</a>
+<header class="site-header">
+  <div class="header-container">
+    <a class="brand" routerLink="/inicio" aria-label="Ir al inicio">
+      <span class="brand-mark">A</span>
+      <span class="brand-text">{{ titulo }}</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      <a routerLink="/situaciones" routerLinkActive="active">Situaciones</a>
+      <a routerLink="/mi-camino" routerLinkActive="active">Mi Camino</a>
     </nav>
-</div>
+
+    <div class="header-actions">
+      <a class="login-link" routerLink="/login">Iniciar sesión</a>
+      <a class="start-button" routerLink="/registro">Comenzar</a>
+    </div>
+  </div>
+</header>
