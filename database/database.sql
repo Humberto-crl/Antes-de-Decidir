@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS antes_de_decidir CHARACTER SET utf8mb4;
+USE antes_de_decidir;
+
 CREATE TABLE usuarios(
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100),
@@ -69,6 +72,15 @@ CREATE TABLE alternativas(
     REFERENCES situaciones(id_situacion)
 );
 
+CREATE TABLE alternativa_factor(
+    id_alternativa_factor INT AUTO_INCREMENT PRIMARY KEY,
+    id_alternativa INT NOT NULL,
+    id_factor INT NOT NULL,
+    valor VARCHAR(255),
+    FOREIGN KEY(id_alternativa) REFERENCES alternativas(id_alternativa) ON DELETE CASCADE,
+    FOREIGN KEY(id_factor) REFERENCES factores(id_factor)
+);
+
 CREATE TABLE escenarios(
     id_escenario INT AUTO_INCREMENT PRIMARY KEY,
     id_situacion INT,
@@ -102,3 +114,7 @@ CREATE TABLE historial(
     FOREIGN KEY(id_situacion)
     REFERENCES situaciones(id_situacion)
 );
+
+ALTER TABLE situaciones
+  ADD COLUMN estado ENUM('no_iniciado','pendiente','en_progreso','completado') DEFAULT 'no_iniciado',
+  ADD COLUMN progreso TINYINT DEFAULT 0;
