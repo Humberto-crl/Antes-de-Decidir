@@ -1,1 +1,146 @@
-<p>comparador works!</p>
+<main class="comparador-page">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Herramienta 02 · Comparador</span>
+      <h1>Compara tus opciones con criterios claros.</h1>
+      <p>Cuando dos o más alternativas parecen posibles, ponerlas lado a lado puede revelar diferencias que a simple vista pasan desapercibidas.</p>
+    </div>
+  </section>
+
+  <section class="section comparador-content">
+    <div class="container">
+      <div class="comparison-header">
+        <div>
+          <span class="section-label">Tu comparación</span>
+          <h2>Alternativas</h2>
+        </div>
+        <button class="secondary-button" type="button">+ Agregar alternativa</button>
+      </div>
+
+      <div class="comparison-table">
+        <div class="table-head">
+          <div class="criterion-heading">Criterios</div>
+          <div class="option-heading">
+            <span class="option-number">A</span>
+            <strong>Alternativa 1</strong>
+            <span>Opción principal</span>
+          </div>
+          <div class="option-heading">
+            <span class="option-number">B</span>
+            <strong>Alternativa 2</strong>
+            <span>Otra posibilidad</span>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="criterion">
+            <strong>Costo</strong>
+            <span>¿Cuánto implica económicamente?</span>
+          </div>
+          <div class="score-cell">
+            <div class="score">$</div>
+            <span>Por definir</span>
+          </div>
+          <div class="score-cell">
+            <div class="score">$</div>
+            <span>Por definir</span>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="criterion">
+            <strong>Tiempo</strong>
+            <span>¿Qué tiempo requiere?</span>
+          </div>
+          <div class="score-cell">
+            <div class="score">—</div>
+            <span>Sin datos</span>
+          </div>
+          <div class="score-cell">
+            <div class="score">—</div>
+            <span>Sin datos</span>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="criterion">
+            <strong>Beneficio</strong>
+            <span>¿Qué podría aportar?</span>
+          </div>
+          <div class="score-cell">
+            <div class="rating"><span></span><span></span><span></span><span></span><span></span></div>
+            <span>Por evaluar</span>
+          </div>
+          <div class="score-cell">
+            <div class="rating"><span></span><span></span><span></span><span></span><span></span></div>
+            <span>Por evaluar</span>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="criterion">
+            <strong>Riesgo</strong>
+            <span>¿Qué podría salir mal?</span>
+          </div>
+          <div class="score-cell">
+            <div class="risk low">Bajo</div>
+            <span>Estimación inicial</span>
+          </div>
+          <div class="score-cell">
+            <div class="risk medium">Medio</div>
+            <span>Estimación inicial</span>
+          </div>
+        </div>
+
+        <div class="comparison-row last">
+          <div class="criterion">
+            <strong>Ajuste personal</strong>
+            <span>¿Encaja con tus objetivos?</span>
+          </div>
+          <div class="score-cell">
+            <div class="fit">Pendiente</div>
+            <span>Necesita reflexión</span>
+          </div>
+          <div class="score-cell">
+            <div class="fit">Pendiente</div>
+            <span>Necesita reflexión</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comparison-note">
+        <span class="note-icon">i</span>
+        <div>
+          <strong>Comparar no significa elegir automáticamente.</strong>
+          <p>Una alternativa puede tener mejores resultados en un criterio y ser menos adecuada en otro. La comparación sirve para hacer visibles esas diferencias.</p>
+        </div>
+      </div>
+
+      <div class="bottom-grid">
+        <article class="criteria-card">
+          <span class="section-label">Siguiente paso</span>
+          <h2>¿Qué criterio pesa más para ti?</h2>
+          <p>Antes de buscar un ganador, identifica qué aspectos son realmente importantes en esta decisión.</p>
+          <div class="criteria-list">
+            <span>Importancia económica</span>
+            <span>Tiempo disponible</span>
+            <span>Riesgo aceptable</span>
+            <span>Objetivos personales</span>
+          </div>
+        </article>
+
+        <article class="scenario-card">
+          <span class="section-label">Mirada complementaria</span>
+          <h2>Explora qué podría ocurrir.</h2>
+          <p>Una comparación muestra diferencias. Los escenarios ayudan a imaginar cómo podrían desarrollarse.</p>
+          <a class="primary-button" routerLink="/escenarios">Explorar escenarios</a>
+        </article>
+      </div>
+
+      <div class="comparison-actions">
+        <a class="secondary-button" routerLink="/analisis">Volver al análisis</a>
+        <a class="primary-button" routerLink="/checklist">Preparar siguiente paso</a>
+      </div>
+    </div>
+  </section>
+</main>
