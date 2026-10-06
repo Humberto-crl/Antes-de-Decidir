@@ -7,14 +7,14 @@ async function obtenerTodas() {
 
 async function obtenerPorId(id) {
     const [rows] = await pool.query(
-        'SELECT * FROM categorias WHERE id_categoria ? ?',
+        'SELECT * FROM categorias WHERE id_categoria = ?',
         [id]
     );
     return rows[0];
 }
 
 async function crear(nombre, descripcion) {
-    const [rows] = await pool.query(
+    const [result] = await pool.query(
         'INSERT INTO categorias (nombre, descripcion) VALUES (?, ?)',
         [nombre, descripcion]
     );
