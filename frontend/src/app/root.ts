@@ -6,33 +6,50 @@ import { AuthService } from './core/auth.service';
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive],
   template: `
-    <header class="nav">
-      <div class="container nav-in">
-        <a routerLink="/" class="brand">🧭 Antes de Decidir</a>
-        <nav class="links">
-          <a routerLink="/herramientas" routerLinkActive="activo">Herramientas</a>
+    <header class="site-header">
+      <div class="header-container">
+        <a class="brand" routerLink="/" aria-label="Ir al inicio">
+          <span class="brand-mark">A</span>
+          <span class="brand-text">Antes de Decidir</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+          <a routerLink="/herramientas" routerLinkActive="active">Herramientas</a>
           @if (auth.logueado()) {
-            <a routerLink="/mi-camino" routerLinkActive="activo">Mi camino</a>
-            <a routerLink="/historial" routerLinkActive="activo">Historial</a>
+            <a routerLink="/mi-camino" routerLinkActive="active">Mi Camino</a>
+            <a routerLink="/historial" routerLinkActive="active">Historial</a>
           }
         </nav>
-        <div class="nav-user">
+
+        <div class="header-actions">
           @if (auth.logueado()) {
-            <a class="btn btn-primary btn-sm" routerLink="/nueva">+ Nueva situación</a>
-            <span class="muted small">{{ auth.usuario()?.nombre }}</span>
-            <button class="btn btn-ghost btn-sm" (click)="salir()">Salir</button>
+            <span class="header-name">{{ auth.usuario()?.nombre }}</span>
+            <a class="secondary-button header-button" routerLink="/nueva">Nueva situación</a>
+            <button class="primary-button header-button" type="button" (click)="salir()">Salir</button>
           } @else {
-            <a class="btn btn-ghost btn-sm" routerLink="/login">Entrar</a>
-            <a class="btn btn-primary btn-sm" routerLink="/registro">Crear cuenta</a>
+            <a class="login-link" routerLink="/login">Iniciar sesión</a>
+            <a class="primary-button header-button" routerLink="/registro">Comenzar</a>
           }
         </div>
       </div>
     </header>
 
-    <main class="container page"><router-outlet /></main>
+    <main class="app-main">
+      <router-outlet />
+    </main>
 
-    <footer class="foot">
-      Antes de Decidir · Te ayuda a entender, no decide por ti.
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div>
+          <div class="footer-brand">Antes de Decidir</div>
+          <p>Comprende la situación. Analiza tus opciones. Decide con más claridad.</p>
+        </div>
+        <div class="footer-copy">
+          <span>© 2026 Antes de Decidir</span>
+          <span>Te ayuda a entender, no decide por ti.</span>
+        </div>
+      </div>
     </footer>
   `,
 })
