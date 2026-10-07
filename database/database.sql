@@ -1,123 +1,111 @@
-CREATE DATABASE IF NOT EXISTS antes_de_decidir CHARACTER SET utf8mb4;
+-- Antes de Decidir - esquema completo (MySQL 8)
+CREATE DATABASE IF NOT EXISTS antes_de_decidir CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE antes_de_decidir;
 
-CREATE TABLE usuarios(
-    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100),
-    apellido VARCHAR(100),
-    correo VARCHAR(150) UNIQUE,
-    password VARCHAR(255),
-    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    estado BOOLEAN DEFAULT TRUE
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS historial, checklist, escenarios, alternativa_factor, alternativas,
+  analisis, situacion_factor, situaciones, factores, categorias, usuarios;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE usuarios (
+  id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  correo VARCHAR(150) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+  estado BOOLEAN DEFAULT TRUE
 );
 
-CREATE TABLE categorias(
-    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100),
-    descripcion TEXT
+CREATE TABLE categorias (
+  id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL UNIQUE,
+  descripcion TEXT
 );
 
-CREATE TABLE situaciones(
-    id_situacion INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
-    id_categoria INT,
-    titulo VARCHAR(150),
-    descripcion TEXT,
-    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY(id_usuario)
-    REFERENCES usuarios(id_usuario),
-
-    FOREIGN KEY(id_categoria)
-    REFERENCES categorias(id_categoria)
+CREATE TABLE factores (
+  id_factor INT AUTO_INCREMENT PRIMARY KEY,
+  id_categoria INT NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
+  descripcion TEXT,
+  FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria) ON DELETE CASCADE
 );
 
-CREATE TABLE factores(
-    id_factor INT AUTO_INCREMENT PRIMARY KEY,
-    id_categoria INT,
-    nombre VARCHAR(100),
-    descripcion TEXT,
-    FOREIGN KEY(id_categoria) REFERENCES categorias(id_categoria)
+CREATE TABLE situaciones (
+  id_situacion INT AUTO_INCREMENT PRIMARY KEY,
+  id_usuario INT NOT NULL,
+  id_categoria INT NOT NULL,
+  titulo VARCHAR(150) NOT NULL,
+  descripcion TEXT,
+  estado ENUM('no_iniciado','pendiente','en_progreso','completado') NOT NULL DEFAULT 'no_iniciado',
+  progreso TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+  fecha_actualizacion DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+  FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
 
-CREATE TABLE situacion_factor(
-    id_situacion_factor INT AUTO_INCREMENT PRIMARY KEY,
-    id_situacion INT,
-    id_factor INT,
-    valor VARCHAR(255),
-
-    FOREIGN KEY(id_situacion)
-    REFERENCES situaciones(id_situacion),
-
-    FOREIGN KEY(id_factor)
-    REFERENCES factores(id_factor)
+CREATE TABLE situacion_factor (
+  id_situacion_factor INT AUTO_INCREMENT PRIMARY KEY,
+  id_situacion INT NOT NULL,
+  id_factor INT NOT NULL,
+  valor VARCHAR(255),
+  UNIQUE (id_situacion, id_factor),
+  FOREIGN KEY (id_situacion) REFERENCES situaciones(id_situacion) ON DELETE CASCADE,
+  FOREIGN KEY (id_factor) REFERENCES factores(id_factor)
 );
 
-CREATE TABLE analisis(
-    id_analisis INT AUTO_INCREMENT PRIMARY KEY,
-    id_situacion INT,
-    observaciones TEXT,
-    informacion_faltante TEXT,
-    fecha_analisis DATETIME DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY(id_situacion)
-    REFERENCES situaciones(id_situacion)
+CREATE TABLE analisis (
+  id_analisis INT AUTO_INCREMENT PRIMARY KEY,
+  id_situacion INT NOT NULL,
+  observaciones TEXT,
+  informacion_faltante TEXT,
+  fecha_analisis DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_situacion) REFERENCES situaciones(id_situacion) ON DELETE CASCADE
 );
 
-CREATE TABLE alternativas(
-    id_alternativa INT AUTO_INCREMENT PRIMARY KEY,
-    id_situacion INT,
-    nombre VARCHAR(100),
-    descripcion TEXT,
-
-    FOREIGN KEY(id_situacion)
-    REFERENCES situaciones(id_situacion)
+CREATE TABLE alternativas (
+  id_alternativa INT AUTO_INCREMENT PRIMARY KEY,
+  id_situacion INT NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
+  descripcion TEXT,
+  FOREIGN KEY (id_situacion) REFERENCES situaciones(id_situacion) ON DELETE CASCADE
 );
 
-CREATE TABLE alternativa_factor(
-    id_alternativa_factor INT AUTO_INCREMENT PRIMARY KEY,
-    id_alternativa INT NOT NULL,
-    id_factor INT NOT NULL,
-    valor VARCHAR(255),
-    FOREIGN KEY(id_alternativa) REFERENCES alternativas(id_alternativa) ON DELETE CASCADE,
-    FOREIGN KEY(id_factor) REFERENCES factores(id_factor)
+CREATE TABLE alternativa_factor (
+  id_alternativa_factor INT AUTO_INCREMENT PRIMARY KEY,
+  id_alternativa INT NOT NULL,
+  id_factor INT NOT NULL,
+  valor VARCHAR(255),
+  UNIQUE (id_alternativa, id_factor),
+  FOREIGN KEY (id_alternativa) REFERENCES alternativas(id_alternativa) ON DELETE CASCADE,
+  FOREIGN KEY (id_factor) REFERENCES factores(id_factor)
 );
 
-CREATE TABLE escenarios(
-    id_escenario INT AUTO_INCREMENT PRIMARY KEY,
-    id_situacion INT,
-    nombre VARCHAR(100),
-    descripcion TEXT,
-    variables JSON,
-    resultado JSON,
-
-    FOREIGN KEY(id_situacion)
-    REFERENCES situaciones(id_situacion)
+CREATE TABLE escenarios (
+  id_escenario INT AUTO_INCREMENT PRIMARY KEY,
+  id_situacion INT NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
+  descripcion TEXT,
+  variables JSON,
+  resultado JSON,
+  FOREIGN KEY (id_situacion) REFERENCES situaciones(id_situacion) ON DELETE CASCADE
 );
 
-CREATE TABLE checklist(
-    id_checklist INT AUTO_INCREMENT PRIMARY KEY,
-    id_situacion INT,
-    item VARCHAR(255),
-    completado BOOLEAN DEFAULT FALSE,
-
-    FOREIGN KEY(id_situacion)
-    REFERENCES situaciones(id_situacion)
+CREATE TABLE checklist (
+  id_checklist INT AUTO_INCREMENT PRIMARY KEY,
+  id_situacion INT NOT NULL,
+  item VARCHAR(255) NOT NULL,
+  completado BOOLEAN NOT NULL DEFAULT FALSE,
+  FOREIGN KEY (id_situacion) REFERENCES situaciones(id_situacion) ON DELETE CASCADE
 );
 
-CREATE TABLE historial(
-    id_historial INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
-    id_situacion INT,
-    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY(id_usuario)
-    REFERENCES usuarios(id_usuario),
-
-    FOREIGN KEY(id_situacion)
-    REFERENCES situaciones(id_situacion)
+CREATE TABLE historial (
+  id_historial INT AUTO_INCREMENT PRIMARY KEY,
+  id_usuario INT NOT NULL,
+  id_situacion INT NOT NULL,
+  accion VARCHAR(50) NOT NULL DEFAULT 'creada',
+  fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+  FOREIGN KEY (id_situacion) REFERENCES situaciones(id_situacion) ON DELETE CASCADE
 );
-
-ALTER TABLE situaciones
-  ADD COLUMN estado ENUM('no_iniciado','pendiente','en_progreso','completado') DEFAULT 'no_iniciado',
-  ADD COLUMN progreso TINYINT DEFAULT 0;
