@@ -34,8 +34,10 @@ CREATE TABLE situaciones(
 
 CREATE TABLE factores(
     id_factor INT AUTO_INCREMENT PRIMARY KEY,
+    id_categoria INT,
     nombre VARCHAR(100),
-    descripcion TEXT
+    descripcion TEXT,
+    FOREIGN KEY(id_categoria) REFERENCES categorias(id_categoria)
 );
 
 CREATE TABLE situacion_factor(
@@ -86,7 +88,8 @@ CREATE TABLE escenarios(
     id_situacion INT,
     nombre VARCHAR(100),
     descripcion TEXT,
-    resultado TEXT,
+    variables JSON,
+    resultado JSON,
 
     FOREIGN KEY(id_situacion)
     REFERENCES situaciones(id_situacion)
